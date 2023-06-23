@@ -1,0 +1,40 @@
+.features {
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 7rem;
+}
+.bgFeatures {
+  width: 100%;
+  height: 700px;
+  z-index: 2;
+  top: 0;
+  position: absolute;
+}
+.bgTiny {
+  z-index: 1;
+  top: 0rem;
+  right: 0;
+  position: absolute;
+  height: 300px;
+  width: 800px;
+}
+.download {
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 10rem;
+}
+.bgDownload {
+  width: 100%;
+  height: 600px;
+  z-index: 2;
+  top: 0;
+  position: absolute;
+}
+.bgDownloadTiny {
+  z-index: 1;
+  top: 0rem;
+  right: 0;
+  position: absolute;
+  height: 300px;
+  width: 100%;
+}
