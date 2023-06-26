@@ -111,10 +111,21 @@
   .content {
     flex-direction: column-reverse;
     margin-top: -3rem;
-    margin-bottom: -2rem;
+    /* margin-bottom: -2rem; */
+    margin-bottom: 17rem;
   }
   .right {
-    width: 100%;
+    width: 300px;
+  }
+  .left img {
+    position: absolute;
+    object-fit: cover;
+    width: 350px;
+    height: 250px;
+    top: 0vh;
+    left: -47vw;
+    z-index: 4;
+    margin-top: 2rem;
   }
   .question {
     font-size: 44px;

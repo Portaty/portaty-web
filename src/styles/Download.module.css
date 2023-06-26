@@ -111,4 +111,30 @@
     width: 280px;
     height: 250px;
   } 
+  .title {
+    text-align: center;
+    width: 300px;
+    margin-top: 7rem;
+  }
+  .buttons {
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .buttonAndroid {
+    padding: 1rem 1rem;
+  }
+  .buttonApple {
+    padding: 1rem 1rem;
+  }
+  .buttonApple img, .buttonAndroid img {
+    margin-right: 10px;
+  }
+  .textButton {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  .subtitle {
+    width: 320px;
+    font-size: 16px;
+  }
 }
