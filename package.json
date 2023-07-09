@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "dashboard",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,10 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "eslint": "8.43.0",
-    "eslint-config-next": "13.4.7",
-    "next": "13.4.7",
+    "@aws-amplify/ui-react": "^4.6.1",
+    "@aws-amplify/ui-react-storage": "^1.2.0",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.12.2",
+    "@mui/x-data-grid": "^6.2.1",
+    "@mui/x-date-pickers": "^6.2.1",
+    "aws-amplify": "^5.2.1",
+    "dayjs": "^1.11.7",
+    "eslint": "8.39.0",
+    "eslint-config-next": "13.3.1",
+    "gsmarena-api": "^2.0.4",
+    "next": "13.3.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "recoil": "^0.7.7",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.0/xlsx-0.20.0.tgz"
   }
 }
