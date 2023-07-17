@@ -3,15 +3,15 @@
 
 const awsmobile = {
     "aws_project_region": "us-east-1",
-    "aws_appsync_graphqlEndpoint": "https://fuzb4c27pzdkfea7mvbjrkq3li.appsync-api.us-east-1.amazonaws.com/graphql",
+    "aws_appsync_graphqlEndpoint": "https://apftjze5gnepfio2vfqk5lbs2q.appsync-api.us-east-1.amazonaws.com/graphql",
     "aws_appsync_region": "us-east-1",
     "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
-    "aws_cognito_identity_pool_id": "us-east-1:12bb708f-8ea3-49b9-a74a-2081b378ceac",
+    "aws_cognito_identity_pool_id": "us-east-1:1fb4e77b-03ef-462f-ab8b-6652b58eadf2",
     "aws_cognito_region": "us-east-1",
-    "aws_user_pools_id": "us-east-1_xrukmGZfB",
-    "aws_user_pools_web_client_id": "7to8s8267vbngfpulnmahr5731",
+    "aws_user_pools_id": "us-east-1_j2FZvZIgk",
+    "aws_user_pools_web_client_id": "6j5bcv2jen6lnb7tapuck9gn85",
     "oauth": {
-        "domain": "portaty-oauth-dev.auth.us-east-1.amazoncognito.com",
+        "domain": "portaty-oauth-prod.auth.us-east-1.amazoncognito.com",
         "scope": [
             "phone",
             "email",
@@ -19,8 +19,8 @@ const awsmobile = {
             "profile",
             "aws.cognito.signin.user.admin"
         ],
-        "redirectSignIn": "exp://192.168.1.158:19000/--/,exp://192.168.250.5:19000/--/,portaty://,exp://--/,exp://192.168.68.101:19000/--/",
-        "redirectSignOut": "exp://192.168.1.158:19000/--/,exp://192.168.250.5:19000/--/,portaty://,exp://--/,exp://192.168.68.101:19000/--/,exp://192.168.68.101:19000/--/",
+        "redirectSignIn": "exp://192.168.1.41:19000/--/,exp://192.168.1.41:19000/--/,exp://192.168.1.41:19000/--/,exp://192.168.1.41:19000/--/,exp://192.168.1.41:19000/--/",
+        "redirectSignOut": "exp://192.168.1.41:19000/--/,exp://192.168.1.41:19000/--/,exp://192.168.1.41:19000/--/,exp://192.168.1.41:19000/--/,exp://192.168.1.41:19000/--/,exp://192.168.1.41:19000/--/",
         "responseType": "code"
     },
     "federationTarget": "COGNITO_USER_POOLS",
@@ -45,7 +45,7 @@ const awsmobile = {
     "aws_cognito_verification_mechanisms": [
         "EMAIL"
     ],
-    "aws_user_files_s3_bucket": "portaty-storage165121-dev",
+    "aws_user_files_s3_bucket": "portaty-storage93020-prod",
     "aws_user_files_s3_bucket_region": "us-east-1"
 };
 
