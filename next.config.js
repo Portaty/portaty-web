@@ -4,13 +4,28 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 's3bybus220215-dev.s3.amazonaws.com',
-        port: '',
-        pathname: '/public/**',
+        protocol: "https",
+        hostname: "s3bybus220215-dev.s3.amazonaws.com",
+        port: "",
+        pathname: "/public/**",
       },
     ],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = {
+  ...nextConfig,
+  async headers() {
+    return [
+      {
+        source: "/public/.well-known/assetlinks.json",
+        headers: [
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
+          },
+        ],
+      },
+    ];
+  },
+};
