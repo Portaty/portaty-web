@@ -1,0 +1,1389 @@
+type ADCategory @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  name: String!
+  image: String
+  path: String
+  products(name: ModelStringKeyConditionInput, filter: ModelADProductFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelADProductConnection
+  brands(filter: ModelCategoryBrandsFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelCategoryBrandsConnection
+  abreviation: String
+  createdBy: ID
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type ADBrand @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  name: String!
+  image: String
+  path: String
+  products(name: ModelStringKeyConditionInput, filter: ModelADProductFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelADProductConnection
+  categories(filter: ModelCategoryBrandsFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelCategoryBrandsConnection
+  abreviation: String
+  createdBy: ID
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type ADProduct @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  name: String
+  images: [String]
+  paths: [String]
+  description: String
+  suggestedPrice: Float
+  categoryID: ID
+  brandID: ID
+  phone: GuidePhone
+  createdBy: ID
+  customerProduct(filter: ModelCustomerProductFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelCustomerProductConnection
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type GuidePhone @aws_iam @aws_cognito_user_pools {
+  colors: [String]
+  storage: [Int]
+  width: Float
+  height: Float
+  depth: Float
+  weight: Float
+  display: Display
+  camera: Camera
+  battery: Battery
+}
+
+type Display @aws_iam @aws_cognito_user_pools {
+  resolution: String
+  screenSize: String
+  ppi: String
+}
+
+type Camera @aws_iam @aws_cognito_user_pools {
+  primary: Int
+  secondary: Int
+  resolution: String
+}
+
+type Battery @aws_iam @aws_cognito_user_pools {
+  capacity: Int
+  duration: Int
+  usb: String
+}
+
+type Todo @aws_iam @aws_oidc {
+  id: ID!
+  owner: String
+  postname: String
+  content: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Mutation {
+  pruebaE(credentials: String!): String
+  pruebaFunc(credentials: String!): String
+  createADCategory(input: CreateADCategoryInput!, condition: ModelADCategoryConditionInput): ADCategory @aws_iam @aws_cognito_user_pools
+  updateADCategory(input: UpdateADCategoryInput!, condition: ModelADCategoryConditionInput): ADCategory @aws_iam @aws_cognito_user_pools
+  deleteADCategory(input: DeleteADCategoryInput!, condition: ModelADCategoryConditionInput): ADCategory @aws_iam @aws_cognito_user_pools
+  createADBrand(input: CreateADBrandInput!, condition: ModelADBrandConditionInput): ADBrand @aws_iam @aws_cognito_user_pools
+  updateADBrand(input: UpdateADBrandInput!, condition: ModelADBrandConditionInput): ADBrand @aws_iam @aws_cognito_user_pools
+  deleteADBrand(input: DeleteADBrandInput!, condition: ModelADBrandConditionInput): ADBrand @aws_iam @aws_cognito_user_pools
+  createADProduct(input: CreateADProductInput!, condition: ModelADProductConditionInput): ADProduct @aws_iam @aws_cognito_user_pools
+  updateADProduct(input: UpdateADProductInput!, condition: ModelADProductConditionInput): ADProduct @aws_iam @aws_cognito_user_pools
+  deleteADProduct(input: DeleteADProductInput!, condition: ModelADProductConditionInput): ADProduct @aws_iam @aws_cognito_user_pools
+  createTodo(input: CreateTodoInput!, condition: ModelTodoConditionInput): Todo @aws_iam @aws_oidc
+  updateTodo(input: UpdateTodoInput!, condition: ModelTodoConditionInput): Todo @aws_iam @aws_oidc
+  deleteTodo(input: DeleteTodoInput!, condition: ModelTodoConditionInput): Todo @aws_iam @aws_oidc
+  createCustomerShop(input: CreateCustomerShopInput!, condition: ModelCustomerShopConditionInput): CustomerShop @aws_iam @aws_cognito_user_pools
+  updateCustomerShop(input: UpdateCustomerShopInput!, condition: ModelCustomerShopConditionInput): CustomerShop @aws_iam @aws_cognito_user_pools
+  deleteCustomerShop(input: DeleteCustomerShopInput!, condition: ModelCustomerShopConditionInput): CustomerShop @aws_iam @aws_cognito_user_pools
+  createCustomerShippingAddress(input: CreateCustomerShippingAddressInput!, condition: ModelCustomerShippingAddressConditionInput): CustomerShippingAddress @aws_iam @aws_cognito_user_pools
+  updateCustomerShippingAddress(input: UpdateCustomerShippingAddressInput!, condition: ModelCustomerShippingAddressConditionInput): CustomerShippingAddress @aws_iam @aws_cognito_user_pools
+  deleteCustomerShippingAddress(input: DeleteCustomerShippingAddressInput!, condition: ModelCustomerShippingAddressConditionInput): CustomerShippingAddress @aws_iam @aws_cognito_user_pools
+  createFavoriteItem(input: CreateFavoriteItemInput!, condition: ModelFavoriteItemConditionInput): FavoriteItem @aws_iam @aws_cognito_user_pools
+  updateFavoriteItem(input: UpdateFavoriteItemInput!, condition: ModelFavoriteItemConditionInput): FavoriteItem @aws_iam @aws_cognito_user_pools
+  deleteFavoriteItem(input: DeleteFavoriteItemInput!, condition: ModelFavoriteItemConditionInput): FavoriteItem @aws_iam @aws_cognito_user_pools
+  createCustomerProduct(input: CreateCustomerProductInput!, condition: ModelCustomerProductConditionInput): CustomerProduct @aws_iam @aws_cognito_user_pools
+  updateCustomerProduct(input: UpdateCustomerProductInput!, condition: ModelCustomerProductConditionInput): CustomerProduct @aws_iam @aws_cognito_user_pools
+  deleteCustomerProduct(input: DeleteCustomerProductInput!, condition: ModelCustomerProductConditionInput): CustomerProduct @aws_iam @aws_cognito_user_pools
+  createCustomerProductStatus(input: CreateCustomerProductStatusInput!, condition: ModelCustomerProductStatusConditionInput): CustomerProductStatus @aws_iam @aws_cognito_user_pools
+  updateCustomerProductStatus(input: UpdateCustomerProductStatusInput!, condition: ModelCustomerProductStatusConditionInput): CustomerProductStatus @aws_iam @aws_cognito_user_pools
+  deleteCustomerProductStatus(input: DeleteCustomerProductStatusInput!, condition: ModelCustomerProductStatusConditionInput): CustomerProductStatus @aws_iam @aws_cognito_user_pools
+  createOrderDetail(input: CreateOrderDetailInput!, condition: ModelOrderDetailConditionInput): OrderDetail @aws_iam @aws_cognito_user_pools
+  updateOrderDetail(input: UpdateOrderDetailInput!, condition: ModelOrderDetailConditionInput): OrderDetail @aws_iam @aws_cognito_user_pools
+  deleteOrderDetail(input: DeleteOrderDetailInput!, condition: ModelOrderDetailConditionInput): OrderDetail @aws_iam @aws_cognito_user_pools
+  createOrderItem(input: CreateOrderItemInput!, condition: ModelOrderItemConditionInput): OrderItem @aws_iam @aws_cognito_user_pools
+  updateOrderItem(input: UpdateOrderItemInput!, condition: ModelOrderItemConditionInput): OrderItem @aws_iam @aws_cognito_user_pools
+  deleteOrderItem(input: DeleteOrderItemInput!, condition: ModelOrderItemConditionInput): OrderItem @aws_iam @aws_cognito_user_pools
+  createPaymentStripe(input: CreatePaymentStripeInput!, condition: ModelPaymentStripeConditionInput): PaymentStripe @aws_iam @aws_cognito_user_pools
+  updatePaymentStripe(input: UpdatePaymentStripeInput!, condition: ModelPaymentStripeConditionInput): PaymentStripe @aws_iam @aws_cognito_user_pools
+  deletePaymentStripe(input: DeletePaymentStripeInput!, condition: ModelPaymentStripeConditionInput): PaymentStripe @aws_iam @aws_cognito_user_pools
+  createCategoryBrands(input: CreateCategoryBrandsInput!, condition: ModelCategoryBrandsConditionInput): CategoryBrands @aws_iam @aws_cognito_user_pools
+  updateCategoryBrands(input: UpdateCategoryBrandsInput!, condition: ModelCategoryBrandsConditionInput): CategoryBrands @aws_iam @aws_cognito_user_pools
+  deleteCategoryBrands(input: DeleteCategoryBrandsInput!, condition: ModelCategoryBrandsConditionInput): CategoryBrands @aws_iam @aws_cognito_user_pools
+}
+
+type CustomerShop @aws_iam @aws_cognito_user_pools {
+  userID: ID!
+  name: String
+  email: String
+  description: String
+  identityId: String
+  favorites(filter: ModelFavoriteItemFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelFavoriteItemConnection
+  salesOrders(filter: ModelOrderDetailFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelOrderDetailConnection
+  purchaseOrders(filter: ModelOrderDetailFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelOrderDetailConnection
+  products(code: ModelStringKeyConditionInput, filter: ModelCustomerProductFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelCustomerProductConnection
+  shippingAddress(filter: ModelCustomerShippingAddressFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelCustomerShippingAddressConnection
+  owner: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type CustomerShippingAddress @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  customerID: ID!
+  title: String
+  country: String
+  postal: String
+  city: String
+  address: String
+  owner: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type FavoriteItem @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  itemID: ID!
+  item: CustomerProductStatus
+  customerShopID: ID!
+  owner: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type CustomerProduct @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  customerID: ID!
+  customer: CustomerShop
+  categoryID: ID!
+  categoryFields: CategoryFields
+  brandID: ID!
+  brandFields: BrandFields
+  productID: ID!
+  adproduct: ADProduct
+  productFields: ProductFields
+  code: String
+  paths: [String]
+  price: Float!
+  condition: Condition
+  description: String
+  status: CustomerProductStatus
+  phoneFields: PhoneFields
+  laptoFields: LaptoFields
+  owner: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  customerProductStatusId: ID
+}
+
+type CategoryFields @aws_iam @aws_cognito_user_pools {
+  name: String!
+  image: String!
+  abreviation: String!
+}
+
+type BrandFields @aws_iam @aws_cognito_user_pools {
+  name: String!
+  image: String!
+  abreviation: String!
+}
+
+type ProductFields @aws_iam @aws_cognito_user_pools {
+  name: String!
+  images: String!
+}
+
+type CustomerProductStatus @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  productID: ID
+  product: CustomerProduct
+  status: ProductStatusValue
+  owner: String
+  favoriteItems(filter: ModelFavoriteItemFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelFavoriteItemConnection
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type OrderDetail @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  purchaseUserID: ID!
+  salesUserID: ID!
+  total: Float!
+  items(filter: ModelOrderItemFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelOrderItemConnection
+  paymentID: ID!
+  payment: PaymentStripe
+  shippingAddress: ShippingAddress
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type ShippingAddress @aws_iam @aws_cognito_user_pools {
+  country: String
+  postal: String
+  city: String
+  address: String
+  phoneNumber: String
+}
+
+type OrderItem @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  orderID: ID
+  itemID: ID!
+  item: CustomerProductStatus
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type PaymentStripe @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  paymentStripeID: String!
+  metadata: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+enum ProductStatusValue {
+  PUBLISHED
+  PENDING
+  UNPUBLISHED
+  SOLD
+}
+
+enum Condition {
+  NEW
+  PERFECT
+  GOOD
+  USED
+}
+
+type PhoneFields @aws_iam @aws_cognito_user_pools {
+  carrier: String
+  imei: String
+  model: String
+  storage: String
+  batery: String
+}
+
+type LaptoFields @aws_iam @aws_cognito_user_pools {
+  serial: String!
+}
+
+type CategoryBrands @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  aDCategoryId: ID!
+  aDBrandId: ID!
+  aDCategory: ADCategory!
+  aDBrand: ADBrand!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelADCategoryConnection @aws_iam @aws_cognito_user_pools {
+  items: [ADCategory]!
+  nextToken: String
+}
+
+input ModelADCategoryFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  image: ModelStringInput
+  path: ModelStringInput
+  abreviation: ModelStringInput
+  createdBy: ModelIDInput
+  and: [ModelADCategoryFilterInput]
+  or: [ModelADCategoryFilterInput]
+  not: ModelADCategoryFilterInput
+}
+
+type Query {
+  getADCategory(id: ID!): ADCategory @aws_iam @aws_cognito_user_pools
+  listADCategories(filter: ModelADCategoryFilterInput, limit: Int, nextToken: String): ModelADCategoryConnection @aws_iam @aws_cognito_user_pools
+  getADBrand(id: ID!): ADBrand @aws_iam @aws_cognito_user_pools
+  listADBrands(filter: ModelADBrandFilterInput, limit: Int, nextToken: String): ModelADBrandConnection @aws_iam @aws_cognito_user_pools
+  getADProduct(id: ID!): ADProduct @aws_iam @aws_cognito_user_pools
+  listADProducts(filter: ModelADProductFilterInput, limit: Int, nextToken: String): ModelADProductConnection @aws_iam @aws_cognito_user_pools
+  aDProductsByCategoryIDAndName(categoryID: ID!, name: ModelStringKeyConditionInput, sortDirection: ModelSortDirection, filter: ModelADProductFilterInput, limit: Int, nextToken: String): ModelADProductConnection @aws_iam @aws_cognito_user_pools
+  aDProductsByBrandIDAndName(brandID: ID!, name: ModelStringKeyConditionInput, sortDirection: ModelSortDirection, filter: ModelADProductFilterInput, limit: Int, nextToken: String): ModelADProductConnection @aws_iam @aws_cognito_user_pools
+  getTodo(id: ID!): Todo @aws_iam @aws_oidc
+  listTodos(filter: ModelTodoFilterInput, limit: Int, nextToken: String): ModelTodoConnection @aws_iam @aws_oidc
+  getCustomerShop(userID: ID!): CustomerShop @aws_iam @aws_cognito_user_pools
+  listCustomerShops(userID: ID, filter: ModelCustomerShopFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelCustomerShopConnection @aws_iam @aws_cognito_user_pools
+  customerShopByEmail(email: String!, sortDirection: ModelSortDirection, filter: ModelCustomerShopFilterInput, limit: Int, nextToken: String): ModelCustomerShopConnection @aws_iam @aws_cognito_user_pools
+  getCustomerShippingAddress(id: ID!): CustomerShippingAddress @aws_iam @aws_cognito_user_pools
+  listCustomerShippingAddresses(filter: ModelCustomerShippingAddressFilterInput, limit: Int, nextToken: String): ModelCustomerShippingAddressConnection @aws_iam @aws_cognito_user_pools
+  customerShippingAddressesByCustomerID(customerID: ID!, sortDirection: ModelSortDirection, filter: ModelCustomerShippingAddressFilterInput, limit: Int, nextToken: String): ModelCustomerShippingAddressConnection @aws_iam @aws_cognito_user_pools
+  getFavoriteItem(id: ID!): FavoriteItem @aws_iam @aws_cognito_user_pools
+  listFavoriteItems(filter: ModelFavoriteItemFilterInput, limit: Int, nextToken: String): ModelFavoriteItemConnection @aws_iam @aws_cognito_user_pools
+  favoriteItemsByItemID(itemID: ID!, sortDirection: ModelSortDirection, filter: ModelFavoriteItemFilterInput, limit: Int, nextToken: String): ModelFavoriteItemConnection @aws_iam @aws_cognito_user_pools
+  favoriteItemsByCustomerShopID(customerShopID: ID!, sortDirection: ModelSortDirection, filter: ModelFavoriteItemFilterInput, limit: Int, nextToken: String): ModelFavoriteItemConnection @aws_iam @aws_cognito_user_pools
+  getCustomerProduct(id: ID!): CustomerProduct @aws_iam @aws_cognito_user_pools
+  listCustomerProducts(filter: ModelCustomerProductFilterInput, limit: Int, nextToken: String): ModelCustomerProductConnection @aws_iam @aws_cognito_user_pools
+  customerProductsByCustomerIDAndCode(customerID: ID!, code: ModelStringKeyConditionInput, sortDirection: ModelSortDirection, filter: ModelCustomerProductFilterInput, limit: Int, nextToken: String): ModelCustomerProductConnection @aws_iam @aws_cognito_user_pools
+  customerProductsByProductID(productID: ID!, sortDirection: ModelSortDirection, filter: ModelCustomerProductFilterInput, limit: Int, nextToken: String): ModelCustomerProductConnection @aws_iam @aws_cognito_user_pools
+  getCustomerProductStatus(id: ID!): CustomerProductStatus @aws_iam @aws_cognito_user_pools
+  listCustomerProductStatuses(filter: ModelCustomerProductStatusFilterInput, limit: Int, nextToken: String): ModelCustomerProductStatusConnection @aws_iam @aws_cognito_user_pools
+  getOrderDetail(id: ID!): OrderDetail @aws_iam @aws_cognito_user_pools
+  listOrderDetails(filter: ModelOrderDetailFilterInput, limit: Int, nextToken: String): ModelOrderDetailConnection @aws_iam @aws_cognito_user_pools
+  orderDetailsByPurchaseUserID(purchaseUserID: ID!, sortDirection: ModelSortDirection, filter: ModelOrderDetailFilterInput, limit: Int, nextToken: String): ModelOrderDetailConnection @aws_iam @aws_cognito_user_pools
+  orderDetailsBySalesUserID(salesUserID: ID!, sortDirection: ModelSortDirection, filter: ModelOrderDetailFilterInput, limit: Int, nextToken: String): ModelOrderDetailConnection @aws_iam @aws_cognito_user_pools
+  getOrderItem(id: ID!): OrderItem @aws_iam @aws_cognito_user_pools
+  listOrderItems(filter: ModelOrderItemFilterInput, limit: Int, nextToken: String): ModelOrderItemConnection @aws_iam @aws_cognito_user_pools
+  orderItemsByOrderID(orderID: ID!, sortDirection: ModelSortDirection, filter: ModelOrderItemFilterInput, limit: Int, nextToken: String): ModelOrderItemConnection @aws_iam @aws_cognito_user_pools
+  getPaymentStripe(id: ID!): PaymentStripe @aws_iam @aws_cognito_user_pools
+  listPaymentStripes(filter: ModelPaymentStripeFilterInput, limit: Int, nextToken: String): ModelPaymentStripeConnection @aws_iam @aws_cognito_user_pools
+  getCategoryBrands(id: ID!): CategoryBrands @aws_iam @aws_cognito_user_pools
+  listCategoryBrands(filter: ModelCategoryBrandsFilterInput, limit: Int, nextToken: String): ModelCategoryBrandsConnection @aws_iam @aws_cognito_user_pools
+  categoryBrandsByADCategoryId(aDCategoryId: ID!, sortDirection: ModelSortDirection, filter: ModelCategoryBrandsFilterInput, limit: Int, nextToken: String): ModelCategoryBrandsConnection @aws_iam @aws_cognito_user_pools
+  categoryBrandsByADBrandId(aDBrandId: ID!, sortDirection: ModelSortDirection, filter: ModelCategoryBrandsFilterInput, limit: Int, nextToken: String): ModelCategoryBrandsConnection @aws_iam @aws_cognito_user_pools
+}
+
+input ModelADCategoryConditionInput {
+  name: ModelStringInput
+  image: ModelStringInput
+  path: ModelStringInput
+  abreviation: ModelStringInput
+  createdBy: ModelIDInput
+  and: [ModelADCategoryConditionInput]
+  or: [ModelADCategoryConditionInput]
+  not: ModelADCategoryConditionInput
+}
+
+input CreateADCategoryInput {
+  id: ID
+  name: String!
+  image: String
+  path: String
+  abreviation: String
+  createdBy: ID
+}
+
+input UpdateADCategoryInput {
+  id: ID!
+  name: String
+  image: String
+  path: String
+  abreviation: String
+  createdBy: ID
+}
+
+input DeleteADCategoryInput {
+  id: ID!
+}
+
+input ModelSubscriptionADCategoryFilterInput {
+  id: ModelSubscriptionIDInput
+  name: ModelSubscriptionStringInput
+  image: ModelSubscriptionStringInput
+  path: ModelSubscriptionStringInput
+  abreviation: ModelSubscriptionStringInput
+  createdBy: ModelSubscriptionIDInput
+  and: [ModelSubscriptionADCategoryFilterInput]
+  or: [ModelSubscriptionADCategoryFilterInput]
+}
+
+type Subscription {
+  onCreateADCategory(filter: ModelSubscriptionADCategoryFilterInput): ADCategory @aws_subscribe(mutations: ["createADCategory"]) @aws_iam @aws_cognito_user_pools
+  onUpdateADCategory(filter: ModelSubscriptionADCategoryFilterInput): ADCategory @aws_subscribe(mutations: ["updateADCategory"]) @aws_iam @aws_cognito_user_pools
+  onDeleteADCategory(filter: ModelSubscriptionADCategoryFilterInput): ADCategory @aws_subscribe(mutations: ["deleteADCategory"]) @aws_iam @aws_cognito_user_pools
+  onCreateADBrand(filter: ModelSubscriptionADBrandFilterInput): ADBrand @aws_subscribe(mutations: ["createADBrand"]) @aws_iam @aws_cognito_user_pools
+  onUpdateADBrand(filter: ModelSubscriptionADBrandFilterInput): ADBrand @aws_subscribe(mutations: ["updateADBrand"]) @aws_iam @aws_cognito_user_pools
+  onDeleteADBrand(filter: ModelSubscriptionADBrandFilterInput): ADBrand @aws_subscribe(mutations: ["deleteADBrand"]) @aws_iam @aws_cognito_user_pools
+  onCreateADProduct(filter: ModelSubscriptionADProductFilterInput): ADProduct @aws_subscribe(mutations: ["createADProduct"]) @aws_iam @aws_cognito_user_pools
+  onUpdateADProduct(filter: ModelSubscriptionADProductFilterInput): ADProduct @aws_subscribe(mutations: ["updateADProduct"]) @aws_iam @aws_cognito_user_pools
+  onDeleteADProduct(filter: ModelSubscriptionADProductFilterInput): ADProduct @aws_subscribe(mutations: ["deleteADProduct"]) @aws_iam @aws_cognito_user_pools
+  onCreateTodo(filter: ModelSubscriptionTodoFilterInput, owner: String): Todo @aws_subscribe(mutations: ["createTodo"]) @aws_iam @aws_oidc
+  onUpdateTodo(filter: ModelSubscriptionTodoFilterInput, owner: String): Todo @aws_subscribe(mutations: ["updateTodo"]) @aws_iam @aws_oidc
+  onDeleteTodo(filter: ModelSubscriptionTodoFilterInput, owner: String): Todo @aws_subscribe(mutations: ["deleteTodo"]) @aws_iam @aws_oidc
+  onCreateCustomerShop(filter: ModelSubscriptionCustomerShopFilterInput, owner: String): CustomerShop @aws_subscribe(mutations: ["createCustomerShop"]) @aws_iam @aws_cognito_user_pools
+  onUpdateCustomerShop(filter: ModelSubscriptionCustomerShopFilterInput, owner: String): CustomerShop @aws_subscribe(mutations: ["updateCustomerShop"]) @aws_iam @aws_cognito_user_pools
+  onDeleteCustomerShop(filter: ModelSubscriptionCustomerShopFilterInput, owner: String): CustomerShop @aws_subscribe(mutations: ["deleteCustomerShop"]) @aws_iam @aws_cognito_user_pools
+  onCreateCustomerShippingAddress(filter: ModelSubscriptionCustomerShippingAddressFilterInput, owner: String): CustomerShippingAddress @aws_subscribe(mutations: ["createCustomerShippingAddress"]) @aws_iam @aws_cognito_user_pools
+  onUpdateCustomerShippingAddress(filter: ModelSubscriptionCustomerShippingAddressFilterInput, owner: String): CustomerShippingAddress @aws_subscribe(mutations: ["updateCustomerShippingAddress"]) @aws_iam @aws_cognito_user_pools
+  onDeleteCustomerShippingAddress(filter: ModelSubscriptionCustomerShippingAddressFilterInput, owner: String): CustomerShippingAddress @aws_subscribe(mutations: ["deleteCustomerShippingAddress"]) @aws_iam @aws_cognito_user_pools
+  onCreateFavoriteItem(filter: ModelSubscriptionFavoriteItemFilterInput, owner: String): FavoriteItem @aws_subscribe(mutations: ["createFavoriteItem"]) @aws_iam @aws_cognito_user_pools
+  onUpdateFavoriteItem(filter: ModelSubscriptionFavoriteItemFilterInput, owner: String): FavoriteItem @aws_subscribe(mutations: ["updateFavoriteItem"]) @aws_iam @aws_cognito_user_pools
+  onDeleteFavoriteItem(filter: ModelSubscriptionFavoriteItemFilterInput, owner: String): FavoriteItem @aws_subscribe(mutations: ["deleteFavoriteItem"]) @aws_iam @aws_cognito_user_pools
+  onCreateCustomerProduct(filter: ModelSubscriptionCustomerProductFilterInput, owner: String): CustomerProduct @aws_subscribe(mutations: ["createCustomerProduct"]) @aws_iam @aws_cognito_user_pools
+  onUpdateCustomerProduct(filter: ModelSubscriptionCustomerProductFilterInput, owner: String): CustomerProduct @aws_subscribe(mutations: ["updateCustomerProduct"]) @aws_iam @aws_cognito_user_pools
+  onDeleteCustomerProduct(filter: ModelSubscriptionCustomerProductFilterInput, owner: String): CustomerProduct @aws_subscribe(mutations: ["deleteCustomerProduct"]) @aws_iam @aws_cognito_user_pools
+  onCreateCustomerProductStatus(filter: ModelSubscriptionCustomerProductStatusFilterInput, owner: String): CustomerProductStatus @aws_subscribe(mutations: ["createCustomerProductStatus"]) @aws_iam @aws_cognito_user_pools
+  onUpdateCustomerProductStatus(filter: ModelSubscriptionCustomerProductStatusFilterInput, owner: String): CustomerProductStatus @aws_subscribe(mutations: ["updateCustomerProductStatus"]) @aws_iam @aws_cognito_user_pools
+  onDeleteCustomerProductStatus(filter: ModelSubscriptionCustomerProductStatusFilterInput, owner: String): CustomerProductStatus @aws_subscribe(mutations: ["deleteCustomerProductStatus"]) @aws_iam @aws_cognito_user_pools
+  onCreateOrderDetail(filter: ModelSubscriptionOrderDetailFilterInput, owner: String): OrderDetail @aws_subscribe(mutations: ["createOrderDetail"]) @aws_iam @aws_cognito_user_pools
+  onUpdateOrderDetail(filter: ModelSubscriptionOrderDetailFilterInput, owner: String): OrderDetail @aws_subscribe(mutations: ["updateOrderDetail"]) @aws_iam @aws_cognito_user_pools
+  onDeleteOrderDetail(filter: ModelSubscriptionOrderDetailFilterInput, owner: String): OrderDetail @aws_subscribe(mutations: ["deleteOrderDetail"]) @aws_iam @aws_cognito_user_pools
+  onCreateOrderItem(filter: ModelSubscriptionOrderItemFilterInput, owner: String): OrderItem @aws_subscribe(mutations: ["createOrderItem"]) @aws_iam @aws_cognito_user_pools
+  onUpdateOrderItem(filter: ModelSubscriptionOrderItemFilterInput, owner: String): OrderItem @aws_subscribe(mutations: ["updateOrderItem"]) @aws_iam @aws_cognito_user_pools
+  onDeleteOrderItem(filter: ModelSubscriptionOrderItemFilterInput, owner: String): OrderItem @aws_subscribe(mutations: ["deleteOrderItem"]) @aws_iam @aws_cognito_user_pools
+  onCreatePaymentStripe(filter: ModelSubscriptionPaymentStripeFilterInput, owner: String): PaymentStripe @aws_subscribe(mutations: ["createPaymentStripe"]) @aws_iam @aws_cognito_user_pools
+  onUpdatePaymentStripe(filter: ModelSubscriptionPaymentStripeFilterInput, owner: String): PaymentStripe @aws_subscribe(mutations: ["updatePaymentStripe"]) @aws_iam @aws_cognito_user_pools
+  onDeletePaymentStripe(filter: ModelSubscriptionPaymentStripeFilterInput, owner: String): PaymentStripe @aws_subscribe(mutations: ["deletePaymentStripe"]) @aws_iam @aws_cognito_user_pools
+  onCreateCategoryBrands(filter: ModelSubscriptionCategoryBrandsFilterInput): CategoryBrands @aws_subscribe(mutations: ["createCategoryBrands"]) @aws_iam @aws_cognito_user_pools
+  onUpdateCategoryBrands(filter: ModelSubscriptionCategoryBrandsFilterInput): CategoryBrands @aws_subscribe(mutations: ["updateCategoryBrands"]) @aws_iam @aws_cognito_user_pools
+  onDeleteCategoryBrands(filter: ModelSubscriptionCategoryBrandsFilterInput): CategoryBrands @aws_subscribe(mutations: ["deleteCategoryBrands"]) @aws_iam @aws_cognito_user_pools
+}
+
+type ModelADBrandConnection @aws_iam @aws_cognito_user_pools {
+  items: [ADBrand]!
+  nextToken: String
+}
+
+input ModelADBrandFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  image: ModelStringInput
+  path: ModelStringInput
+  abreviation: ModelStringInput
+  createdBy: ModelIDInput
+  and: [ModelADBrandFilterInput]
+  or: [ModelADBrandFilterInput]
+  not: ModelADBrandFilterInput
+}
+
+input ModelADBrandConditionInput {
+  name: ModelStringInput
+  image: ModelStringInput
+  path: ModelStringInput
+  abreviation: ModelStringInput
+  createdBy: ModelIDInput
+  and: [ModelADBrandConditionInput]
+  or: [ModelADBrandConditionInput]
+  not: ModelADBrandConditionInput
+}
+
+input CreateADBrandInput {
+  id: ID
+  name: String!
+  image: String
+  path: String
+  abreviation: String
+  createdBy: ID
+}
+
+input UpdateADBrandInput {
+  id: ID!
+  name: String
+  image: String
+  path: String
+  abreviation: String
+  createdBy: ID
+}
+
+input DeleteADBrandInput {
+  id: ID!
+}
+
+input ModelSubscriptionADBrandFilterInput {
+  id: ModelSubscriptionIDInput
+  name: ModelSubscriptionStringInput
+  image: ModelSubscriptionStringInput
+  path: ModelSubscriptionStringInput
+  abreviation: ModelSubscriptionStringInput
+  createdBy: ModelSubscriptionIDInput
+  and: [ModelSubscriptionADBrandFilterInput]
+  or: [ModelSubscriptionADBrandFilterInput]
+}
+
+input GuidePhoneInput {
+  colors: [String]
+  storage: [Int]
+  width: Float
+  height: Float
+  depth: Float
+  weight: Float
+  display: DisplayInput
+  camera: CameraInput
+  battery: BatteryInput
+}
+
+input DisplayInput {
+  resolution: String
+  screenSize: String
+  ppi: String
+}
+
+input CameraInput {
+  primary: Int
+  secondary: Int
+  resolution: String
+}
+
+input BatteryInput {
+  capacity: Int
+  duration: Int
+  usb: String
+}
+
+type ModelADProductConnection @aws_iam @aws_cognito_user_pools {
+  items: [ADProduct]!
+  nextToken: String
+}
+
+input ModelADProductFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  images: ModelStringInput
+  paths: ModelStringInput
+  description: ModelStringInput
+  suggestedPrice: ModelFloatInput
+  categoryID: ModelIDInput
+  brandID: ModelIDInput
+  createdBy: ModelIDInput
+  and: [ModelADProductFilterInput]
+  or: [ModelADProductFilterInput]
+  not: ModelADProductFilterInput
+}
+
+input ModelADProductConditionInput {
+  name: ModelStringInput
+  images: ModelStringInput
+  paths: ModelStringInput
+  description: ModelStringInput
+  suggestedPrice: ModelFloatInput
+  categoryID: ModelIDInput
+  brandID: ModelIDInput
+  createdBy: ModelIDInput
+  and: [ModelADProductConditionInput]
+  or: [ModelADProductConditionInput]
+  not: ModelADProductConditionInput
+}
+
+input CreateADProductInput {
+  id: ID
+  name: String
+  images: [String]
+  paths: [String]
+  description: String
+  suggestedPrice: Float
+  categoryID: ID
+  brandID: ID
+  phone: GuidePhoneInput
+  createdBy: ID
+}
+
+input UpdateADProductInput {
+  id: ID!
+  name: String
+  images: [String]
+  paths: [String]
+  description: String
+  suggestedPrice: Float
+  categoryID: ID
+  brandID: ID
+  phone: GuidePhoneInput
+  createdBy: ID
+}
+
+input DeleteADProductInput {
+  id: ID!
+}
+
+input ModelSubscriptionADProductFilterInput {
+  id: ModelSubscriptionIDInput
+  name: ModelSubscriptionStringInput
+  images: ModelSubscriptionStringInput
+  paths: ModelSubscriptionStringInput
+  description: ModelSubscriptionStringInput
+  suggestedPrice: ModelSubscriptionFloatInput
+  categoryID: ModelSubscriptionIDInput
+  brandID: ModelSubscriptionIDInput
+  createdBy: ModelSubscriptionIDInput
+  and: [ModelSubscriptionADProductFilterInput]
+  or: [ModelSubscriptionADProductFilterInput]
+}
+
+type ModelTodoConnection @aws_iam @aws_oidc {
+  items: [Todo]!
+  nextToken: String
+}
+
+input ModelTodoFilterInput {
+  id: ModelIDInput
+  owner: ModelStringInput
+  postname: ModelStringInput
+  content: ModelStringInput
+  and: [ModelTodoFilterInput]
+  or: [ModelTodoFilterInput]
+  not: ModelTodoFilterInput
+}
+
+input ModelTodoConditionInput {
+  owner: ModelStringInput
+  postname: ModelStringInput
+  content: ModelStringInput
+  and: [ModelTodoConditionInput]
+  or: [ModelTodoConditionInput]
+  not: ModelTodoConditionInput
+}
+
+input CreateTodoInput {
+  id: ID
+  owner: String
+  postname: String
+  content: String
+}
+
+input UpdateTodoInput {
+  id: ID!
+  owner: String
+  postname: String
+  content: String
+}
+
+input DeleteTodoInput {
+  id: ID!
+}
+
+input ModelSubscriptionTodoFilterInput {
+  id: ModelSubscriptionIDInput
+  postname: ModelSubscriptionStringInput
+  content: ModelSubscriptionStringInput
+  and: [ModelSubscriptionTodoFilterInput]
+  or: [ModelSubscriptionTodoFilterInput]
+}
+
+type ModelCustomerShopConnection @aws_iam @aws_cognito_user_pools {
+  items: [CustomerShop]!
+  nextToken: String
+}
+
+input ModelCustomerShopFilterInput {
+  userID: ModelIDInput
+  name: ModelStringInput
+  email: ModelStringInput
+  description: ModelStringInput
+  identityId: ModelStringInput
+  owner: ModelStringInput
+  and: [ModelCustomerShopFilterInput]
+  or: [ModelCustomerShopFilterInput]
+  not: ModelCustomerShopFilterInput
+}
+
+input ModelCustomerShopConditionInput {
+  name: ModelStringInput
+  email: ModelStringInput
+  description: ModelStringInput
+  identityId: ModelStringInput
+  owner: ModelStringInput
+  and: [ModelCustomerShopConditionInput]
+  or: [ModelCustomerShopConditionInput]
+  not: ModelCustomerShopConditionInput
+}
+
+input CreateCustomerShopInput {
+  userID: ID!
+  name: String
+  email: String
+  description: String
+  identityId: String
+  owner: String
+}
+
+input UpdateCustomerShopInput {
+  userID: ID!
+  name: String
+  email: String
+  description: String
+  identityId: String
+  owner: String
+}
+
+input DeleteCustomerShopInput {
+  userID: ID!
+}
+
+input ModelSubscriptionCustomerShopFilterInput {
+  userID: ModelSubscriptionIDInput
+  name: ModelSubscriptionStringInput
+  email: ModelSubscriptionStringInput
+  description: ModelSubscriptionStringInput
+  identityId: ModelSubscriptionStringInput
+  and: [ModelSubscriptionCustomerShopFilterInput]
+  or: [ModelSubscriptionCustomerShopFilterInput]
+}
+
+type ModelCustomerShippingAddressConnection @aws_iam @aws_cognito_user_pools {
+  items: [CustomerShippingAddress]!
+  nextToken: String
+}
+
+input ModelCustomerShippingAddressFilterInput {
+  id: ModelIDInput
+  customerID: ModelIDInput
+  title: ModelStringInput
+  country: ModelStringInput
+  postal: ModelStringInput
+  city: ModelStringInput
+  address: ModelStringInput
+  owner: ModelStringInput
+  and: [ModelCustomerShippingAddressFilterInput]
+  or: [ModelCustomerShippingAddressFilterInput]
+  not: ModelCustomerShippingAddressFilterInput
+}
+
+input ModelCustomerShippingAddressConditionInput {
+  customerID: ModelIDInput
+  title: ModelStringInput
+  country: ModelStringInput
+  postal: ModelStringInput
+  city: ModelStringInput
+  address: ModelStringInput
+  owner: ModelStringInput
+  and: [ModelCustomerShippingAddressConditionInput]
+  or: [ModelCustomerShippingAddressConditionInput]
+  not: ModelCustomerShippingAddressConditionInput
+}
+
+input CreateCustomerShippingAddressInput {
+  id: ID
+  customerID: ID!
+  title: String
+  country: String
+  postal: String
+  city: String
+  address: String
+  owner: String
+}
+
+input UpdateCustomerShippingAddressInput {
+  id: ID!
+  customerID: ID
+  title: String
+  country: String
+  postal: String
+  city: String
+  address: String
+  owner: String
+}
+
+input DeleteCustomerShippingAddressInput {
+  id: ID!
+}
+
+input ModelSubscriptionCustomerShippingAddressFilterInput {
+  id: ModelSubscriptionIDInput
+  customerID: ModelSubscriptionIDInput
+  title: ModelSubscriptionStringInput
+  country: ModelSubscriptionStringInput
+  postal: ModelSubscriptionStringInput
+  city: ModelSubscriptionStringInput
+  address: ModelSubscriptionStringInput
+  and: [ModelSubscriptionCustomerShippingAddressFilterInput]
+  or: [ModelSubscriptionCustomerShippingAddressFilterInput]
+}
+
+type ModelFavoriteItemConnection @aws_iam @aws_cognito_user_pools {
+  items: [FavoriteItem]!
+  nextToken: String
+}
+
+input ModelFavoriteItemFilterInput {
+  id: ModelIDInput
+  itemID: ModelIDInput
+  customerShopID: ModelIDInput
+  owner: ModelStringInput
+  and: [ModelFavoriteItemFilterInput]
+  or: [ModelFavoriteItemFilterInput]
+  not: ModelFavoriteItemFilterInput
+}
+
+input ModelFavoriteItemConditionInput {
+  itemID: ModelIDInput
+  customerShopID: ModelIDInput
+  owner: ModelStringInput
+  and: [ModelFavoriteItemConditionInput]
+  or: [ModelFavoriteItemConditionInput]
+  not: ModelFavoriteItemConditionInput
+}
+
+input CreateFavoriteItemInput {
+  id: ID
+  itemID: ID!
+  customerShopID: ID!
+  owner: String
+}
+
+input UpdateFavoriteItemInput {
+  id: ID!
+  itemID: ID
+  customerShopID: ID
+  owner: String
+}
+
+input DeleteFavoriteItemInput {
+  id: ID!
+}
+
+input ModelSubscriptionFavoriteItemFilterInput {
+  id: ModelSubscriptionIDInput
+  itemID: ModelSubscriptionIDInput
+  customerShopID: ModelSubscriptionIDInput
+  and: [ModelSubscriptionFavoriteItemFilterInput]
+  or: [ModelSubscriptionFavoriteItemFilterInput]
+}
+
+input CategoryFieldsInput {
+  name: String!
+  image: String!
+  abreviation: String!
+}
+
+input BrandFieldsInput {
+  name: String!
+  image: String!
+  abreviation: String!
+}
+
+input ProductFieldsInput {
+  name: String!
+  images: String!
+}
+
+input PhoneFieldsInput {
+  carrier: String
+  imei: String
+  model: String
+  storage: String
+  batery: String
+}
+
+input LaptoFieldsInput {
+  serial: String!
+}
+
+type ModelCustomerProductConnection @aws_iam @aws_cognito_user_pools {
+  items: [CustomerProduct]!
+  nextToken: String
+}
+
+input ModelConditionInput {
+  eq: Condition
+  ne: Condition
+}
+
+input ModelCustomerProductFilterInput {
+  id: ModelIDInput
+  customerID: ModelIDInput
+  categoryID: ModelIDInput
+  brandID: ModelIDInput
+  productID: ModelIDInput
+  code: ModelStringInput
+  paths: ModelStringInput
+  price: ModelFloatInput
+  condition: ModelConditionInput
+  description: ModelStringInput
+  owner: ModelStringInput
+  and: [ModelCustomerProductFilterInput]
+  or: [ModelCustomerProductFilterInput]
+  not: ModelCustomerProductFilterInput
+  customerProductStatusId: ModelIDInput
+}
+
+input ModelCustomerProductConditionInput {
+  customerID: ModelIDInput
+  categoryID: ModelIDInput
+  brandID: ModelIDInput
+  productID: ModelIDInput
+  code: ModelStringInput
+  paths: ModelStringInput
+  price: ModelFloatInput
+  condition: ModelConditionInput
+  description: ModelStringInput
+  owner: ModelStringInput
+  and: [ModelCustomerProductConditionInput]
+  or: [ModelCustomerProductConditionInput]
+  not: ModelCustomerProductConditionInput
+  customerProductStatusId: ModelIDInput
+}
+
+input CreateCustomerProductInput {
+  id: ID
+  customerID: ID!
+  categoryID: ID!
+  categoryFields: CategoryFieldsInput
+  brandID: ID!
+  brandFields: BrandFieldsInput
+  productID: ID!
+  productFields: ProductFieldsInput
+  code: String
+  paths: [String]
+  price: Float!
+  condition: Condition
+  description: String
+  phoneFields: PhoneFieldsInput
+  laptoFields: LaptoFieldsInput
+  owner: String
+  customerProductStatusId: ID
+}
+
+input UpdateCustomerProductInput {
+  id: ID!
+  customerID: ID
+  categoryID: ID
+  categoryFields: CategoryFieldsInput
+  brandID: ID
+  brandFields: BrandFieldsInput
+  productID: ID
+  productFields: ProductFieldsInput
+  code: String
+  paths: [String]
+  price: Float
+  condition: Condition
+  description: String
+  phoneFields: PhoneFieldsInput
+  laptoFields: LaptoFieldsInput
+  owner: String
+  customerProductStatusId: ID
+}
+
+input DeleteCustomerProductInput {
+  id: ID!
+}
+
+input ModelSubscriptionCustomerProductFilterInput {
+  id: ModelSubscriptionIDInput
+  customerID: ModelSubscriptionIDInput
+  categoryID: ModelSubscriptionIDInput
+  brandID: ModelSubscriptionIDInput
+  productID: ModelSubscriptionIDInput
+  code: ModelSubscriptionStringInput
+  paths: ModelSubscriptionStringInput
+  price: ModelSubscriptionFloatInput
+  condition: ModelSubscriptionStringInput
+  description: ModelSubscriptionStringInput
+  and: [ModelSubscriptionCustomerProductFilterInput]
+  or: [ModelSubscriptionCustomerProductFilterInput]
+}
+
+type ModelCustomerProductStatusConnection @aws_iam @aws_cognito_user_pools {
+  items: [CustomerProductStatus]!
+  nextToken: String
+}
+
+input ModelProductStatusValueInput {
+  eq: ProductStatusValue
+  ne: ProductStatusValue
+}
+
+input ModelCustomerProductStatusFilterInput {
+  id: ModelIDInput
+  productID: ModelIDInput
+  status: ModelProductStatusValueInput
+  owner: ModelStringInput
+  and: [ModelCustomerProductStatusFilterInput]
+  or: [ModelCustomerProductStatusFilterInput]
+  not: ModelCustomerProductStatusFilterInput
+}
+
+input ModelCustomerProductStatusConditionInput {
+  productID: ModelIDInput
+  status: ModelProductStatusValueInput
+  owner: ModelStringInput
+  and: [ModelCustomerProductStatusConditionInput]
+  or: [ModelCustomerProductStatusConditionInput]
+  not: ModelCustomerProductStatusConditionInput
+}
+
+input CreateCustomerProductStatusInput {
+  id: ID
+  productID: ID
+  status: ProductStatusValue
+  owner: String
+}
+
+input UpdateCustomerProductStatusInput {
+  id: ID!
+  productID: ID
+  status: ProductStatusValue
+  owner: String
+}
+
+input DeleteCustomerProductStatusInput {
+  id: ID!
+}
+
+input ModelSubscriptionCustomerProductStatusFilterInput {
+  id: ModelSubscriptionIDInput
+  productID: ModelSubscriptionIDInput
+  status: ModelSubscriptionStringInput
+  and: [ModelSubscriptionCustomerProductStatusFilterInput]
+  or: [ModelSubscriptionCustomerProductStatusFilterInput]
+}
+
+input ShippingAddressInput {
+  country: String
+  postal: String
+  city: String
+  address: String
+  phoneNumber: String
+}
+
+type ModelOrderDetailConnection @aws_iam @aws_cognito_user_pools {
+  items: [OrderDetail]!
+  nextToken: String
+}
+
+input ModelOrderDetailFilterInput {
+  id: ModelIDInput
+  purchaseUserID: ModelIDInput
+  salesUserID: ModelIDInput
+  total: ModelFloatInput
+  paymentID: ModelIDInput
+  and: [ModelOrderDetailFilterInput]
+  or: [ModelOrderDetailFilterInput]
+  not: ModelOrderDetailFilterInput
+}
+
+input ModelOrderDetailConditionInput {
+  purchaseUserID: ModelIDInput
+  salesUserID: ModelIDInput
+  total: ModelFloatInput
+  paymentID: ModelIDInput
+  and: [ModelOrderDetailConditionInput]
+  or: [ModelOrderDetailConditionInput]
+  not: ModelOrderDetailConditionInput
+}
+
+input CreateOrderDetailInput {
+  id: ID
+  purchaseUserID: ID!
+  salesUserID: ID!
+  total: Float!
+  paymentID: ID!
+  shippingAddress: ShippingAddressInput
+}
+
+input UpdateOrderDetailInput {
+  id: ID!
+  purchaseUserID: ID
+  salesUserID: ID
+  total: Float
+  paymentID: ID
+  shippingAddress: ShippingAddressInput
+}
+
+input DeleteOrderDetailInput {
+  id: ID!
+}
+
+input ModelSubscriptionOrderDetailFilterInput {
+  id: ModelSubscriptionIDInput
+  purchaseUserID: ModelSubscriptionIDInput
+  salesUserID: ModelSubscriptionIDInput
+  total: ModelSubscriptionFloatInput
+  paymentID: ModelSubscriptionIDInput
+  and: [ModelSubscriptionOrderDetailFilterInput]
+  or: [ModelSubscriptionOrderDetailFilterInput]
+}
+
+type ModelOrderItemConnection @aws_iam @aws_cognito_user_pools {
+  items: [OrderItem]!
+  nextToken: String
+}
+
+input ModelOrderItemFilterInput {
+  id: ModelIDInput
+  orderID: ModelIDInput
+  itemID: ModelIDInput
+  and: [ModelOrderItemFilterInput]
+  or: [ModelOrderItemFilterInput]
+  not: ModelOrderItemFilterInput
+}
+
+input ModelOrderItemConditionInput {
+  orderID: ModelIDInput
+  itemID: ModelIDInput
+  and: [ModelOrderItemConditionInput]
+  or: [ModelOrderItemConditionInput]
+  not: ModelOrderItemConditionInput
+}
+
+input CreateOrderItemInput {
+  id: ID
+  orderID: ID
+  itemID: ID!
+}
+
+input UpdateOrderItemInput {
+  id: ID!
+  orderID: ID
+  itemID: ID
+}
+
+input DeleteOrderItemInput {
+  id: ID!
+}
+
+input ModelSubscriptionOrderItemFilterInput {
+  id: ModelSubscriptionIDInput
+  orderID: ModelSubscriptionIDInput
+  itemID: ModelSubscriptionIDInput
+  and: [ModelSubscriptionOrderItemFilterInput]
+  or: [ModelSubscriptionOrderItemFilterInput]
+}
+
+type ModelPaymentStripeConnection @aws_iam @aws_cognito_user_pools {
+  items: [PaymentStripe]!
+  nextToken: String
+}
+
+input ModelPaymentStripeFilterInput {
+  id: ModelIDInput
+  paymentStripeID: ModelStringInput
+  metadata: ModelStringInput
+  and: [ModelPaymentStripeFilterInput]
+  or: [ModelPaymentStripeFilterInput]
+  not: ModelPaymentStripeFilterInput
+}
+
+input ModelPaymentStripeConditionInput {
+  paymentStripeID: ModelStringInput
+  metadata: ModelStringInput
+  and: [ModelPaymentStripeConditionInput]
+  or: [ModelPaymentStripeConditionInput]
+  not: ModelPaymentStripeConditionInput
+}
+
+input CreatePaymentStripeInput {
+  id: ID
+  paymentStripeID: String!
+  metadata: String
+}
+
+input UpdatePaymentStripeInput {
+  id: ID!
+  paymentStripeID: String
+  metadata: String
+}
+
+input DeletePaymentStripeInput {
+  id: ID!
+}
+
+input ModelSubscriptionPaymentStripeFilterInput {
+  id: ModelSubscriptionIDInput
+  paymentStripeID: ModelSubscriptionStringInput
+  metadata: ModelSubscriptionStringInput
+  and: [ModelSubscriptionPaymentStripeFilterInput]
+  or: [ModelSubscriptionPaymentStripeFilterInput]
+}
+
+type ModelCategoryBrandsConnection @aws_iam @aws_cognito_user_pools {
+  items: [CategoryBrands]!
+  nextToken: String
+}
+
+input ModelCategoryBrandsFilterInput {
+  id: ModelIDInput
+  aDCategoryId: ModelIDInput
+  aDBrandId: ModelIDInput
+  and: [ModelCategoryBrandsFilterInput]
+  or: [ModelCategoryBrandsFilterInput]
+  not: ModelCategoryBrandsFilterInput
+}
+
+input ModelCategoryBrandsConditionInput {
+  aDCategoryId: ModelIDInput
+  aDBrandId: ModelIDInput
+  and: [ModelCategoryBrandsConditionInput]
+  or: [ModelCategoryBrandsConditionInput]
+  not: ModelCategoryBrandsConditionInput
+}
+
+input CreateCategoryBrandsInput {
+  id: ID
+  aDCategoryId: ID!
+  aDBrandId: ID!
+}
+
+input UpdateCategoryBrandsInput {
+  id: ID!
+  aDCategoryId: ID
+  aDBrandId: ID
+}
+
+input DeleteCategoryBrandsInput {
+  id: ID!
+}
+
+input ModelSubscriptionCategoryBrandsFilterInput {
+  id: ModelSubscriptionIDInput
+  aDCategoryId: ModelSubscriptionIDInput
+  aDBrandId: ModelSubscriptionIDInput
+  and: [ModelSubscriptionCategoryBrandsFilterInput]
+  or: [ModelSubscriptionCategoryBrandsFilterInput]
+}
+
+input ModelStringKeyConditionInput {
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  between: [String]
+  beginsWith: String
+}

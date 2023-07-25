@@ -1,0 +1,44 @@
+## [Start] Authorization Steps. **
+$util.qr($ctx.stash.put("hasAuth", true))
+#set( $isAuthorized = false )
+#if( $util.authType() == "IAM Authorization" )
+  #set( $adminRoles = ["us-east-1_as9zn8Bn1_Full-access/CognitoIdentityCredentials","us-east-1_as9zn8Bn1_Manage-only/CognitoIdentityCredentials"] )
+  #foreach( $adminRole in $adminRoles )
+    #if( $ctx.identity.userArn.contains($adminRole) && $ctx.identity.userArn != $ctx.stash.authRole && $ctx.identity.userArn != $ctx.stash.unauthRole )
+      #return($util.toJson({}))
+    #end
+  #end
+$util.unauthorized()
+#end
+#if( $util.authType() == "User Pool Authorization" )
+
+#end
+#if( $util.authType() == "Open ID Connect Authorization" )
+  #set( $isAuthorized = true )
+  #if( !$isAuthorized )
+    #set( $staticGroupRoles = [{}] )
+    #foreach( $groupRole in $staticGroupRoles )
+      #set( $groupsInToken = $util.defaultIfNull($ctx.identity.claims.get($groupRole.claim), []) )
+      #if( $groupsInToken.contains($groupRole.entity) )
+        #set( $isAuthorized = true )
+        #break
+      #end
+    #end
+  #end
+  #if( !$isAuthorized )
+    #set( $ownerEntity0 = $util.defaultIfNull($ctx.result.owner, null) )
+    #set( $ownerClaim0 = $util.defaultIfNull($ctx.identity.claims.get("user_id"), null) )
+    #if( !$util.isNull($ownerClaim0) )
+
+      #set( $ownerClaimsList0 = [] )
+      #if( $ownerEntity0 == $ownerClaim0 || $ownerClaimsList0.contains($ownerEntity0) )
+        #set( $isAuthorized = true )
+      #end
+    #end
+  #end
+#end
+#if( !$isAuthorized )
+$util.unauthorized()
+#end
+$util.toJson({"version":"2018-05-29","payload":{}})
+## [End] Authorization Steps. **
