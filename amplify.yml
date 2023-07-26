@@ -8,7 +8,7 @@ frontend:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: .nextF
+    baseDirectory: .next
     files:
       - "**/*"
   cache:
@@ -20,8 +20,3 @@ frontend:
       headers:
         - key: Content-Type
           value: application/json
-    # Regla para mantener el comportamiento predeterminado para otras rutas
-    - pattern: "**/*"
-      headers:
-        - key: Content-Type
-          value: text/html; charset=utf-8
