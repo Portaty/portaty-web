@@ -155,7 +155,7 @@
     "apiportaty": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-portaty-dev-165121-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-portaty-prod-93020-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "Parameters": {
           "AppSyncApiName": "portaty",
           "DynamoDBBillingMode": "PAY_PER_REQUEST",
@@ -172,16 +172,16 @@
           "unauthRoleName": {
             "Ref": "UnauthRoleName"
           },
-          "S3DeploymentBucket": "amplify-portaty-dev-165121-deployment",
+          "S3DeploymentBucket": "amplify-portaty-prod-93020-deployment",
           "S3DeploymentRootKey": "amplify-appsync-files/4056c6c1b641bbae2b0c33c3b72bad3264bda770",
-          "env": "dev"
+          "env": "prod"
         }
       }
     },
     "authportaty": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-portaty-dev-165121-deployment/amplify-cfn-templates/auth/portaty-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-portaty-prod-93020-deployment/amplify-cfn-templates/auth/portaty-cloudformation-template.json",
         "Parameters": {
           "identityPoolName": "testAuthIdentityPool",
           "allowUnauthenticatedIdentities": false,
@@ -242,14 +242,14 @@
           "authProviders": "",
           "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"exp://192.168.1.41:19000/--/\",\"exp://192.168.1.41:19000/--/\",\"exp://192.168.1.41:19000/--/\",\"exp://192.168.1.41:19000/--/\",\"exp://192.168.1.41:19000/--/\"],\"LogoutURLs\":[\"exp://192.168.1.41:19000/--/\",\"exp://192.168.1.41:19000/--/\",\"exp://192.168.1.41:19000/--/\",\"exp://192.168.1.41:19000/--/\",\"exp://192.168.1.41:19000/--/\",\"exp://192.168.1.41:19000/--/\"]}",
           "hostedUIProviderCreds": "[{\"ProviderName\":\"Google\"}]",
-          "env": "dev"
+          "env": "prod"
         }
       }
     },
     "authuserPoolGroups": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-portaty-dev-165121-deployment/amplify-cfn-templates/auth/userPoolGroups-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-portaty-prod-93020-deployment/amplify-cfn-templates/auth/userPoolGroups-cloudformation-template.json",
         "Parameters": {
           "AuthRoleArn": {
             "Fn::GetAtt": [
@@ -287,14 +287,14 @@
               "Outputs.IdentityPoolId"
             ]
           },
-          "env": "dev"
+          "env": "prod"
         }
       }
     },
     "storages3portaty": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-portaty-dev-165121-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-portaty-prod-93020-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "Parameters": {
           "bucketName": "portaty-storage",
           "selectedGuestPermissions": "s3:GetObject,s3:ListBucket",
@@ -332,7 +332,7 @@
               "Outputs.adminGroupRole"
             ]
           },
-          "env": "dev"
+          "env": "prod"
         }
       }
     },

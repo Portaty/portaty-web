@@ -15,12 +15,12 @@ const nextConfig = {
 
 module.exports = {
   ...nextConfig,
-  async rewrites() {
-    return [
-      {
-        source: "/.well-known/assetlinks.json",
-        destination: "/api/assetlinks",
-      },
-    ];
-  },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: "/.well-known/assetlinks.json",
+  //       destination: "/api/assetlinks",
+  //     },
+  //   ];
+  // },
 };

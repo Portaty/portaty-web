@@ -10,7 +10,7 @@ $util.qr($ctx.stash.put("hasAuth", true))
     #end
   #end
   #if( !$isAuthorized )
-    #if( ($ctx.identity.userArn == $ctx.stash.authRole) || ($ctx.identity.cognitoIdentityPoolId == "us-east-1:12bb708f-8ea3-49b9-a74a-2081b378ceac" && $ctx.identity.cognitoIdentityAuthType == "authenticated") )
+    #if( ($ctx.identity.userArn == $ctx.stash.authRole) || ($ctx.identity.cognitoIdentityPoolId == "us-east-1:1fb4e77b-03ef-462f-ab8b-6652b58eadf2" && $ctx.identity.cognitoIdentityAuthType == "authenticated") )
       #set( $isAuthorized = true )
     #end
   #end
