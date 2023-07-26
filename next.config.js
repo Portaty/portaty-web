@@ -15,16 +15,11 @@ const nextConfig = {
 
 module.exports = {
   ...nextConfig,
-  async headers() {
+  async rewrites() {
     return [
       {
-        source: "/public/.well-known/assetlinks.json",
-        headers: [
-          {
-            key: "X-Content-Type-Options",
-            value: "nosniff",
-          },
-        ],
+        source: "/.well-known/assetlinks.json",
+        destination: "/api/assetlinks",
       },
     ];
   },
