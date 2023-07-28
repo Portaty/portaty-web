@@ -1,5 +1,0 @@
-customHeaders:
-  - pattern: '*.json'
-    headers:
-    - key: 'Content-Type'
-      value: 'application/json'

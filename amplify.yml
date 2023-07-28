@@ -1,0 +1,28 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+        - echo 'Setting up custom Content-Type for .well-known/assetlinks.json'
+        - |
+          cat << EOF > public/.well-known/assetlinks.json.headers
+          [
+            {
+              "source": "/.well-known/assetlinks.json",
+              "headers": [
+                {"key": "Content-Type", "value": "application/hjson"}
+              ]
+            }
+          ]
+          EOF
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - node_modules/**/*
