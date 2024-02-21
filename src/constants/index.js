@@ -31,10 +31,14 @@ export const home = {
   google: All.Google,
   apple: All.Apple,
   first: "La mejor aplicacion",
-  second: " para vender tus productos usados",
+  second: " hacia un mundo de oportunidades comerciales",
   ad: "App de comercio",
-  subtitle:
-    '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u”',
+  subtitle: `En un mundo interconectado donde la accesibilidad y la autenticidad son
+    fundamentales, Portaty se destaca como una aplicación innovadora que está redefiniendo la
+    forma en que los negocios y los consumidores se conectan en un nivel global. Al fusionar la
+    eficiencia de la tecnología digital con la autenticidad del comercio local. Portaty se convierte en tu
+    destino definitivo para descubrir, explorar y conectar con todo lo que necesitas, sin importar
+    dónde te encuentres.`,
   download: "Descargalo ya",
   buttons: {
     one: {
@@ -66,64 +70,66 @@ export const features = {
   features: [
     {
       id: "feature-1",
-      title: "Cuenta totalmente gratis",
+      title: "Búsqueda personalizada",
       image: All.User,
     },
     {
       id: "feature-2",
-      title: "Gran variedad para pagar",
+      title: "Visualización auténtica",
       image: All.Money,
     },
     {
       id: "feature-3",
-      title: "Proteccion contra tus datos",
+      title: "Ubicación precisa",
       image: All.Security,
     },
     {
       id: "feature-4",
-      title: "Esta al dia con tus ventas y compras",
+      title: "Registro de favoritos",
       image: All.Notifications,
     },
     {
       id: "feature-5",
-      title: "",
+      title: "Alcance global",
       image: All.Like,
     },
     {
       id: "feature-6",
-      title: "",
+      title: "Interacción directa",
       image: All.Clock,
     },
   ],
 };
 
 export const whatsis = {
-  ad: "Comprar y Vender",
+  ad: "Descubre negocios",
   first: "Nosotros somos",
   second: " PORTATY",
-  paragraph:
-    "¿Pero que realmente es Portaty? Somos una App de comercio electronico donde puedes vender todos los productos que ya no quieres y Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u",
+  paragraph: `Portaty no es solo una aplicación, es un puente que une a negocios y consumidores en un mundo
+  cada vez más conectado. Al ofrecer una experiencia de usuario única y beneficios tanto para los
+  negocios como para los consumidores, estamos construyendo un futuro donde la distancia ya no
+  es un obstáculo para el comercio global. Únete a nosotros en esta emocionante aventura y
+  descubre un mundo de oportunidades comerciales justo en la palma de tu mano con Portaty.`,
   mainImage: ``,
   faqTitle: "Preguntas y respuestas",
   img: All.WhatsIs,
   faq: [
     {
       id: 1,
-      question: "¿Puedo vender lo que sea en Portaty?",
+      question: "¿Puedo encontrar cualquier negocio?",
       anwser:
-        "No, solo puedes vender lo que tenemos en nuestra lista de disponibles para publicar",
+        "Si, puedes encontrar cualquier negocio que este registrado en Portaty",
     },
     {
       id: 2,
-      question: "¿Puedo vender lo que sea en Portaty?",
+      question: "¿Puedo contactar directamente con los negocios?",
       anwser:
-        "No, solo puedes vender lo que tenemos en nuestra lista de disponibles para publicar",
+        "Si, tienes multiples opciones para lograr ponerte en contacto con el negocio que tu quieras",
     },
     {
       id: 3,
-      question: "¿Puedo vender lo que sea en Portaty?",
-      anwser:
-        "No, solo puedes vender lo que tenemos en nuestra lista de disponibles para publicar",
+      question: "¿Puedo registrar mi propio negocio en Portaty?",
+      anwser: `Si, Portaty te permite registrar tu negocio en pocos pasos y sin muchas complicaciones`,
     },
   ],
 };
@@ -135,7 +141,7 @@ export const download = {
   bgTiny: All.BgDownloadTiny,
   first: "¿Listo para",
   second: " comenzar?",
-  subtitle: `Descargue ahora y empiece a vender sus productos que ya no usa. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u`,
+  subtitle: `Descargue ahora y empiece a descubrir un monton de negocios a su alcance y/o registrar sus propios negocios 😉`,
   buttons: {
     one: {
       id: "one-btn",

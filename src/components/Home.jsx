@@ -23,12 +23,12 @@ const Home = () => {
 
               <p className={styles.textButton}>{home.buttons.one.title}</p>
             </Link>
-            <Link href={home.buttons.two.link} className={styles.buttonGet}>
+            {/* <Link href={home.buttons.two.link} className={styles.buttonGet}>
               <Image src={home.apple} alt="" width={30} height={30} />
               <p className={styles.pale}>{`|`}</p>
 
               <p className={styles.textButton}>{home.buttons.two.title}</p>
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className={styles.right}>

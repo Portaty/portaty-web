@@ -8,7 +8,6 @@ export { default as BgDownload } from "./bg-download.png";
 export { default as BgDownloadTiny } from "./bg-download-tiny.png";
 export { default as WhatsIs } from "./whatsis.png";
 export { default as Users } from "./users.png";
-export { default as FooterLogo } from "./footerLogo.png";
 export { default as User } from "./user.png";
 export { default as Money } from "./money.png";
 export { default as Like } from "./like.png";

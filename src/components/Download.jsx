@@ -20,12 +20,12 @@ const Download = () => {
 
             <p className={styles.textButton}>{download.buttons.one.title}</p>
           </Link>
-          <Link href={download.buttons.two.link} className={styles.buttonApple}>
+          {/* <Link href={download.buttons.two.link} className={styles.buttonApple}>
             <Image src={download.apple} alt="" width={30} height={30} />
             <p className={styles.pale}>{`|`}</p>
 
             <p className={styles.textButton}>{download.buttons.two.title}</p>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>
