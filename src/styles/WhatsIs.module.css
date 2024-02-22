@@ -59,11 +59,12 @@
 .paragraph {
   font-family: var(--font);
   font-weight: 400;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 16px;
+  line-height: 24px;
   text-transform: initial;
   color: var(--black);
   opacity: 0.78;
+  text-align: justify;
 }
 .faq {
   display: flex;
