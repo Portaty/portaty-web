@@ -44,7 +44,7 @@ export const home = {
     one: {
       id: "one-btn",
       title: "Google Play",
-      link: "/",
+      link: "https://play.google.com/store/apps/details?id=com.teamportaty.appdev",
       icon: "bx bxs-chevrons-right",
     },
     two: {
@@ -131,6 +131,16 @@ export const whatsis = {
       question: "¿Puedo registrar mi propio negocio en Portaty?",
       anwser: `Si, Portaty te permite registrar tu negocio en pocos pasos y sin muchas complicaciones`,
     },
+    {
+      id: 4,
+      question: "¿Al registrar mi negocio en Portaty, genera algún costo?",
+      anwser: `No, es totalmente gratis registrar tu negocio en Portaty para siempre.`
+    },
+    {
+      id: 5,
+      question: "¿Puedo encontrar un negocio o producto en cualquier ciudad de mi elección?",
+      anwser: `Si, tienes acceso a un filtro de busqueda para especificar Portaty en la localidad que desees buscar`,
+    },
   ],
 };
 
@@ -146,7 +156,7 @@ export const download = {
     one: {
       id: "one-btn",
       title: "Google Play",
-      link: "/",
+      link: "https://play.google.com/store/apps/details?id=com.teamportaty.appdev",
       icon: "bx bxs-chevrons-right",
     },
     two: {
