@@ -17,6 +17,7 @@
   height: 400px;
   top: -20vh;
   left: -16vw;
+  z-index: -1;
 }
 .right {
   flex: 1;
@@ -59,11 +60,12 @@
 .paragraph {
   font-family: var(--font);
   font-weight: 400;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 16px;
+  line-height: 24px;
   text-transform: initial;
   color: var(--black);
   opacity: 0.78;
+  text-align: justify;
 }
 .faq {
   display: flex;
@@ -124,7 +126,7 @@
     height: 250px;
     top: 0vh;
     left: -47vw;
-    z-index: 4;
+    /* z-index: 4; */
     margin-top: 2rem;
   }
   .question {

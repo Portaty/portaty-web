@@ -31,16 +31,15 @@ export const home = {
   google: All.Google,
   apple: All.Apple,
   first: "La mejor aplicacion",
-  second: " para vender tus productos usados",
+  second: " hacia un mundo de oportunidades comerciales",
   ad: "App de comercio",
-  subtitle:
-    '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u”',
+  subtitle: `Portaty es una aplicación innovadora que conecta negocios y consumidores a nivel global. Fusionando tecnología digital con autenticidad local, es el destino ideal para descubrir y conectar con lo que necesitas, estés donde estés.`,
   download: "Descargalo ya",
   buttons: {
     one: {
       id: "one-btn",
       title: "Google Play",
-      link: "/",
+      link: "https://play.google.com/store/apps/details?id=com.teamportaty.appdev",
       icon: "bx bxs-chevrons-right",
     },
     two: {
@@ -66,64 +65,76 @@ export const features = {
   features: [
     {
       id: "feature-1",
-      title: "Cuenta totalmente gratis",
+      title: "Búsqueda personalizada",
       image: All.User,
     },
     {
       id: "feature-2",
-      title: "Gran variedad para pagar",
+      title: "Visualización auténtica",
       image: All.Money,
     },
     {
       id: "feature-3",
-      title: "Proteccion contra tus datos",
+      title: "Ubicación precisa",
       image: All.Security,
     },
     {
       id: "feature-4",
-      title: "Esta al dia con tus ventas y compras",
+      title: "Registro de favoritos",
       image: All.Notifications,
     },
     {
       id: "feature-5",
-      title: "",
+      title: "Alcance global",
       image: All.Like,
     },
     {
       id: "feature-6",
-      title: "",
+      title: "Interacción directa",
       image: All.Clock,
     },
   ],
 };
 
 export const whatsis = {
-  ad: "Comprar y Vender",
+  ad: "Descubre negocios",
   first: "Nosotros somos",
   second: " PORTATY",
-  paragraph:
-    "¿Pero que realmente es Portaty? Somos una App de comercio electronico donde puedes vender todos los productos que ya no quieres y Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u",
+  paragraph: `Portaty no es solo una aplicación, es un puente que une a negocios y consumidores en un mundo
+  cada vez más conectado. Al ofrecer una experiencia de usuario única y beneficios tanto para los
+  negocios como para los consumidores, estamos construyendo un futuro donde la distancia ya no
+  es un obstáculo para el comercio global. Únete a nosotros en esta emocionante aventura y
+  descubre un mundo de oportunidades comerciales justo en la palma de tu mano con Portaty.`,
   mainImage: ``,
   faqTitle: "Preguntas y respuestas",
   img: All.WhatsIs,
   faq: [
     {
       id: 1,
-      question: "¿Puedo vender lo que sea en Portaty?",
+      question: "¿Puedo encontrar cualquier negocio?",
       anwser:
-        "No, solo puedes vender lo que tenemos en nuestra lista de disponibles para publicar",
+        "Si, puedes encontrar cualquier negocio que este registrado en Portaty",
     },
     {
       id: 2,
-      question: "¿Puedo vender lo que sea en Portaty?",
+      question: "¿Puedo contactar directamente con los negocios?",
       anwser:
-        "No, solo puedes vender lo que tenemos en nuestra lista de disponibles para publicar",
+        "Si, tienes multiples opciones para lograr ponerte en contacto con el negocio que tu quieras",
     },
     {
       id: 3,
-      question: "¿Puedo vender lo que sea en Portaty?",
-      anwser:
-        "No, solo puedes vender lo que tenemos en nuestra lista de disponibles para publicar",
+      question: "¿Puedo registrar mi propio negocio en Portaty?",
+      anwser: `Si, Portaty te permite registrar tu negocio en pocos pasos y sin muchas complicaciones`,
+    },
+    {
+      id: 4,
+      question: "¿Al registrar mi negocio en Portaty, genera algún costo?",
+      anwser: `No, es totalmente gratis registrar tu negocio en Portaty para siempre.`
+    },
+    {
+      id: 5,
+      question: "¿Puedo encontrar un negocio o producto en cualquier ciudad de mi elección?",
+      anwser: `Si, tienes acceso a un filtro de busqueda para especificar Portaty en la localidad que desees buscar`,
     },
   ],
 };
@@ -135,12 +146,12 @@ export const download = {
   bgTiny: All.BgDownloadTiny,
   first: "¿Listo para",
   second: " comenzar?",
-  subtitle: `Descargue ahora y empiece a vender sus productos que ya no usa. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u`,
+  subtitle: `Descargue ahora y empiece a descubrir un monton de negocios a su alcance y/o registrar sus propios negocios 😉`,
   buttons: {
     one: {
       id: "one-btn",
       title: "Google Play",
-      link: "/",
+      link: "https://play.google.com/store/apps/details?id=com.teamportaty.appdev",
       icon: "bx bxs-chevrons-right",
     },
     two: {
