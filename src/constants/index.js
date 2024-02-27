@@ -33,12 +33,7 @@ export const home = {
   first: "La mejor aplicacion",
   second: " hacia un mundo de oportunidades comerciales",
   ad: "App de comercio",
-  subtitle: `En un mundo interconectado donde la accesibilidad y la autenticidad son
-    fundamentales, Portaty se destaca como una aplicación innovadora que está redefiniendo la
-    forma en que los negocios y los consumidores se conectan en un nivel global. Al fusionar la
-    eficiencia de la tecnología digital con la autenticidad del comercio local. Portaty se convierte en tu
-    destino definitivo para descubrir, explorar y conectar con todo lo que necesitas, sin importar
-    dónde te encuentres.`,
+  subtitle: `Portaty es una aplicación innovadora que conecta negocios y consumidores a nivel global. Fusionando tecnología digital con autenticidad local, es el destino ideal para descubrir y conectar con lo que necesitas, estés donde estés.`,
   download: "Descargalo ya",
   buttons: {
     one: {
