@@ -18,7 +18,7 @@ const Home = () => {
         
           <p className={styles.subtitle}>{home.subtitle}   <button onClick={fetch}>haz clic</button></p>
           <div className={styles.buttons}>
-            <Link href={home.buttons.one.link} className={styles.buttonGet}>
+            <Link href={home.buttons.one.link} className={styles.buttonGet} target='_blank'>
               <Image src={home.google} alt="" width={30} height={30} />
               <p className={styles.pale}>{`|`}</p>
 
@@ -34,7 +34,7 @@ const Home = () => {
         </div>
         <div className={styles.right}>
           <Image src={home.mainImage} alt="" width={1200} height={1000} />
-          <Link href={home.buttons.three.link} className={styles.buttonVideo}>
+          <Link href={home.buttons.three.link} className={styles.buttonVideo} target='_blank'>
             <i className={home.buttons.three.icon}></i>
             <p>{home.buttons.three.title}</p>
           </Link>

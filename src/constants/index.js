@@ -33,18 +33,13 @@ export const home = {
   first: "La mejor aplicacion",
   second: " hacia un mundo de oportunidades comerciales",
   ad: "App de comercio",
-  subtitle: `En un mundo interconectado donde la accesibilidad y la autenticidad son
-    fundamentales, Portaty se destaca como una aplicación innovadora que está redefiniendo la
-    forma en que los negocios y los consumidores se conectan en un nivel global. Al fusionar la
-    eficiencia de la tecnología digital con la autenticidad del comercio local. Portaty se convierte en tu
-    destino definitivo para descubrir, explorar y conectar con todo lo que necesitas, sin importar
-    dónde te encuentres.`,
+  subtitle: `Portaty es una aplicación innovadora que conecta negocios y consumidores a nivel global. Fusionando tecnología digital con autenticidad local, es el destino ideal para descubrir y conectar con lo que necesitas, estés donde estés.`,
   download: "Descargalo ya",
   buttons: {
     one: {
       id: "one-btn",
       title: "Google Play",
-      link: "/",
+      link: "https://play.google.com/store/apps/details?id=com.teamportaty.appdev",
       icon: "bx bxs-chevrons-right",
     },
     two: {
@@ -131,6 +126,16 @@ export const whatsis = {
       question: "¿Puedo registrar mi propio negocio en Portaty?",
       anwser: `Si, Portaty te permite registrar tu negocio en pocos pasos y sin muchas complicaciones`,
     },
+    {
+      id: 4,
+      question: "¿Al registrar mi negocio en Portaty, genera algún costo?",
+      anwser: `No, es totalmente gratis registrar tu negocio en Portaty para siempre.`
+    },
+    {
+      id: 5,
+      question: "¿Puedo encontrar un negocio o producto en cualquier ciudad de mi elección?",
+      anwser: `Si, tienes acceso a un filtro de busqueda para especificar Portaty en la localidad que desees buscar`,
+    },
   ],
 };
 
@@ -146,7 +151,7 @@ export const download = {
     one: {
       id: "one-btn",
       title: "Google Play",
-      link: "/",
+      link: "https://play.google.com/store/apps/details?id=com.teamportaty.appdev",
       icon: "bx bxs-chevrons-right",
     },
     two: {
