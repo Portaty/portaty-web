@@ -15,8 +15,6 @@ const Home = () => {
           <h2 className={styles.title}>
             <span>{home.first}</span> {home.second}{" "}
           </h2>
-        
-          <p className={styles.subtitle}>{home.subtitle}   <button onClick={fetch}>haz clic</button></p>
           <div className={styles.buttons}>
             <Link href={home.buttons.one.link} className={styles.buttonGet}>
               <Image src={home.google} alt="" width={30} height={30} />
