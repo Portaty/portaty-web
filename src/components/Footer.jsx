@@ -11,7 +11,7 @@ const Footer = () => {
       <div className={styles.content}>
         <div className={styles.top}>
           <div className={styles.contact}>
-            <Image src={contact.logo} alt="" width={100} height={100} />
+            <Image src={contact.logo} alt="" width={150} height={65} />
             {contact.info.map((item) => (
               <div key={item.id}>
                 <i className={item.icon}></i>

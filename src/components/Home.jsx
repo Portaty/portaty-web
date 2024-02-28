@@ -23,20 +23,20 @@ const Home = () => {
 
               <p className={styles.textButton}>{home.buttons.one.title}</p>
             </Link>
-            {/* <Link href={home.buttons.two.link} className={styles.buttonGet}>
+            <Link href={home.buttons.two.link} className={styles.buttonGet}>
               <Image src={home.apple} alt="" width={30} height={30} />
               <p className={styles.pale}>{`|`}</p>
 
               <p className={styles.textButton}>{home.buttons.two.title}</p>
-            </Link> */}
+            </Link>
           </div>
         </div>
         <div className={styles.right}>
           <Image src={home.mainImage} alt="" width={1200} height={1000} />
-          <Link href={home.buttons.three.link} className={styles.buttonVideo} target='_blank'>
+          {/* <Link href={home.buttons.three.link} className={styles.buttonVideo} target='_blank'>
             <i className={home.buttons.three.icon}></i>
             <p>{home.buttons.three.title}</p>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

@@ -4,11 +4,11 @@ export const navbar = {
   logo: All.Logo,
   menu: [
     {
-      id: "home",
+      id: "#home",
       title: "Inicio",
     },
     {
-      id: "app",
+      id: "info",
       title: "¿Qué es Portaty?",
     },
     // {
@@ -16,13 +16,14 @@ export const navbar = {
     //   title: "Nosotros",
     // },
     {
-      id: "contact",
+      id: "#contact",
       title: "Contacto",
     },
   ],
   button: {
     title: "Descarga ya",
     icon: "bx bx-right-arrow-alt",
+    link: "https://play.google.com/store/apps/details?id=com.teamportaty.appdev",
   },
 };
 
@@ -44,7 +45,7 @@ export const home = {
     },
     two: {
       id: "two-btn",
-      title: "App Store",
+      title: "Proximamente",
       link: "/",
       icon: "bx bxs-chevrons-right",
     },
@@ -123,8 +124,8 @@ export const whatsis = {
     },
     {
       id: 3,
-      question: "¿Puedo registrar mi propio negocio en Portaty?",
-      anwser: `Si, Portaty te permite registrar tu negocio en pocos pasos y sin muchas complicaciones`,
+      question: "¿Es fácil registrarse como negocio en Portaty?",
+      anwser: `Sí, registrarse como negocio en Portaty es sencillo. Solo necesitas seguir unos simples pasos para crear una cuenta y agregar la información de tu negocio.`,
     },
     {
       id: 4,
@@ -135,6 +136,16 @@ export const whatsis = {
       id: 5,
       question: "¿Puedo encontrar un negocio o producto en cualquier ciudad de mi elección?",
       anwser: `Si, tienes acceso a un filtro de busqueda para especificar Portaty en la localidad que desees buscar`,
+    },
+    {
+      id: 6,
+      question: "¿Qué tipo de negocios pueden registrarse en Portaty?",
+      anwser: `Cualquier negocio que ofrezca productos o servicios puede registrarse en Portaty, desde restaurantes y tiendas minoristas hasta servicios profesionales y actividades de ocio. La diversidad de opciones garantiza que los consumidores puedan encontrar lo que necesitan.`,
+    },
+    {
+      id: 7,
+      question: "¿Qué beneficios ofrece Portaty a los consumidores?",
+      anwser: `Portaty ofrece a los consumidores la conveniencia de encontrar una amplia variedad de negocios y servicios en un solo lugar, junto con la capacidad de interactuar directamente con los negocios, ver fotos reales de productos y recibir actualizaciones sobre promociones especiales.`,
     },
   ],
 };
@@ -156,7 +167,7 @@ export const download = {
     },
     two: {
       id: "two-btn",
-      title: "App Store",
+      title: "Proximamente",
       link: "/",
       icon: "bx bxs-chevrons-right",
     },

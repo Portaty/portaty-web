@@ -14,11 +14,14 @@ export default function Main() {
   return (
     <div className={styles.container}>
       <Navbar />
-      <Home />
+      <div id={"home"}>
+        <Home />
+      </div>
+
       <div className={styles.features}>
-      <Image
+        <Image
           src={features.bgFeatures}
-          alt=""  
+          alt=""
           width={1000}
           height={1000}
           className={styles.bgFeatures}
@@ -31,14 +34,14 @@ export default function Main() {
           height={1000}
           className={styles.bgTiny}
         />
-      <Features />
+        <Features />
       </div>
 
       <WhatsIs />
       <div className={styles.download}>
-      <Image
+        <Image
           src={download.bgDownload}
-          alt=""  
+          alt=""
           width={1000}
           height={1000}
           className={styles.bgDownload}
@@ -51,10 +54,11 @@ export default function Main() {
           height={1000}
           className={styles.bgDownloadTiny}
         />
-      <Download />
-
+        <Download />
       </div>
-      <Footer />
+      <div id={"contact"}>
+        <Footer />
+      </div>
     </div>
   );
 }
