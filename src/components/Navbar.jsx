@@ -8,7 +8,7 @@ const Navbar = () => {
     <div className="container section_two">
       <div className={styles.navbar}>
         <div className={styles.left}>
-          <Image src={navbar.logo} alt="" width={100} height={100} />
+          <Image src={navbar.logo} alt="" width={200} height={80} />
         </div>
         <div className={styles.right}>
         <div className={styles.menu}>
@@ -18,7 +18,7 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-          <Link href={'/'} className={styles.button}>
+          <Link href={navbar.button.link} className={styles.button} target='_blank'>
               <p>{navbar.button.title}</p>
               <i className={navbar.button.icon}></i>
             </Link>

@@ -1,0 +1,47 @@
+.title {
+  font-size: 60px;
+  font-family: var(--font);
+  font-weight: 600;
+  background: linear-gradient(
+    rgba(255, 164, 36, 1),
+    rgb(248, 167, 53),
+    rgb(245, 185, 100),
+    rgb(240, 218, 188)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.paragraph {
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: initial;
+    color: var(--black);
+    margin: 0.5rem 0;
+}
+.chrTitle {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 24px;
+    text-transform: initial;
+    color: var(--black);
+    margin: 2rem 0;
+}
+.chrSubtitle {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: initial;
+    color: var(--black);
+}
+.chrParagraph {
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: initial;
+    color: var(--black);
+    margin-bottom: 1rem;
+
+}

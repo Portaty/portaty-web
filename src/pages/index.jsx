@@ -17,7 +17,10 @@ export default function Main() {
   return (
     <div className={styles.container}>
       <Navbar />
-      <Home />
+      <div id={"home"}>
+        <Home />
+      </div>
+
       <div className={styles.features}>
         <Image
           src={features.bgFeatures}
@@ -56,7 +59,9 @@ export default function Main() {
         />
         <Download />
       </div>
-      <Footer />
+      <div id={"contact"}>
+        <Footer />
+      </div>
     </div>
   );
 }

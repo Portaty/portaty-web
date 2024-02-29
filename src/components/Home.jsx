@@ -34,10 +34,10 @@ const Home = () => {
         </div>
         <div className={styles.right}>
           <Image src={home.mainImage} alt="" width={1200} height={1000} />
-          <Link href={home.buttons.three.link} className={styles.buttonVideo}>
+          {/* <Link href={home.buttons.three.link} className={styles.buttonVideo} target='_blank'>
             <i className={home.buttons.three.icon}></i>
             <p>{home.buttons.three.title}</p>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>
