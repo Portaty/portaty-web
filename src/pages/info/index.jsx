@@ -5,9 +5,13 @@ import styles from "@/styles/Info.module.css";
 const Info = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar backHome={true} />
       <div className="container section_two">
-        <h1 className={styles.title}>Tu puente hacia un mundo de oportunidades comerciales</h1>
+        <h1 className={styles.title} style={{
+          marginTop: 50
+        }}>
+          Tu puente hacia un mundo de oportunidades comerciales
+        </h1>
         <p className={styles.paragraph}>
           En un mundo interconectado donde la accesibilidad y la autenticidad
           son fundamentales, Portaty se destaca como una aplicación innovadora
@@ -106,7 +110,9 @@ const Info = () => {
             tranquilidad al elegir negocios en cualquier lugar del mundo.
           </p>
         </div>
-        <div className={styles.chrContain}>
+        <div className={styles.chrContain} style={{
+          marginBottom: 100
+        }}>
           <h3 className={styles.chrSubtitle}>Ahorro de Tiempo: </h3>
           <p className={styles.chrParagraph}>
             {" "}
@@ -117,7 +123,9 @@ const Info = () => {
           </p>
         </div>
       </div>
-      <Footer />
+      <div id="contact">
+        <Footer />
+      </div>
     </div>
   );
 };
