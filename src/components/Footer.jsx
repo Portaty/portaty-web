@@ -12,12 +12,29 @@ const Footer = () => {
         <div className={styles.top}>
           <div className={styles.contact}>
             <Image src={contact.logo} alt="" width={150} height={65} />
-            {contact.info.map((item) => (
-              <div key={item.id}>
-                <i className={item.icon}></i>
-                <p>{item.text}</p>
-              </div>
-            ))}
+            <div key={contact.info[0].id}>
+              <i className={contact.info[0].icon}></i>
+              <p>{contact.info[0].text}</p>
+            </div>
+            <div key={contact.info[1].id}>
+              <i className={contact.info[1].icon}></i>
+              <p>{contact.info[1].text}</p>
+            </div>
+
+            <div className={styles.redes}>
+              {contact.redes.map((item) => (
+                <Link href={`${item.link}`} key={item.id}>
+                  <i className={item.icon}></i>
+                </Link>
+              ))}
+            </div>
+            <Link
+              href={`${contact.info[2].link}`}
+              className={styles.linkWhatsapp}
+            >
+              <i className={contact.info[2].icon}></i>
+              <p>Contactanos</p>
+            </Link>
           </div>
           <div className={styles.links}>
             <h2>{links.title}</h2>
@@ -49,9 +66,7 @@ const Footer = () => {
                 placeholder={newsletter.placeholder}
                 id=""
               />
-              <button>
-                {newsletter.button}
-              </button>
+              <button>{newsletter.button}</button>
             </div>
           </div>
         </div>
