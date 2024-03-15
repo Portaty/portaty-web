@@ -130,11 +130,12 @@ export const whatsis = {
     {
       id: 4,
       question: "¿Al registrar mi negocio en Portaty, genera algún costo?",
-      anwser: `No, es totalmente gratis registrar tu negocio en Portaty para siempre.`
+      anwser: `No, es totalmente gratis registrar tu negocio en Portaty para siempre.`,
     },
     {
       id: 5,
-      question: "¿Puedo encontrar un negocio o producto en cualquier ciudad de mi elección?",
+      question:
+        "¿Puedo encontrar un negocio o producto en cualquier ciudad de mi elección?",
       anwser: `Si, tienes acceso a un filtro de busqueda para especificar Portaty en la localidad que desees buscar`,
     },
     {
@@ -186,7 +187,34 @@ export const footer = {
       {
         id: "info-2",
         icon: "bx bxs-phone",
-        text: "+58 00000 00",
+        text: "+57 320 3890732",
+        link: "https://wa.link/u2kvfk",
+      },
+      {
+        id: "info-3",
+        icon: "bx bxl-whatsapp",
+        text: "+57 320 3890732",
+        link: "https://wa.link/u2kvfk",
+      },
+    ],
+    redes: [
+      {
+        id: "info-3",
+        icon: "bx bxl-tiktok",
+        text: "@portatyapp",
+        link: "www.tiktok.com/@portatyapp",
+      },
+      {
+        id: "info-4",
+        icon: "bx bxl-instagram",
+        text: "@portatyapp",
+        link: "https://www.instagram.com/portatyapp?igsh=MWNwaHU0bHZ1OGswcQ%3D%3D&utm_source=qr",
+      },
+      {
+        id: "info-5",
+        icon: "bx bxl-twitter",
+        text: "@PortatyApp",
+        link: "https://twitter.com/PortatyApp",
       },
     ],
   },

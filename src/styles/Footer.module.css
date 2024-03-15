@@ -33,6 +33,32 @@
 .contact i {
   color: var(--orange);
 }
+.redes {
+  display: flex;
+}
+.redes i {
+  font-size: 32px;
+  margin-right: 15px;
+}
+.redes i:hover {
+  color: var(--black);
+  font-size: 32px;
+  margin-right: 15px;
+}
+.linkWhatsapp {
+  background-color: #25D366;
+  border-radius: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+.linkWhatsapp i {
+  color: var(--white);
+  font-size: 24px;
+  margin-right: 5px;
+}
+
 .contact p {
   font-family: var(--font);
   font-weight: 400;
@@ -40,7 +66,14 @@
   line-height: 28px;
   text-transform: initial;
   color: var(--black);
-  opacity: 0.78;
+  opacity: 0.88;
+}
+.linkWhatsapp p {
+  font-family: var(--font);
+  font-weight: 500;
+  font-size: 15px;
+  text-transform: initial;
+  color: var(--black);
 }
 .links h2,
 .legal h2,

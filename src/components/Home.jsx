@@ -39,6 +39,7 @@ const Home = () => {
             <p>{home.buttons.three.title}</p>
           </Link> */}
         </div>
+        {/* <iframe src="https://portaty.grafana.net/dashboard-solo/new?orgId=1&tab=query&showCategory=Override+1&from=1709151897686&to=1709238297686&panelId=1" width="450" height="200" frameborder="0"></iframe> */}
       </div>
     </div>
   );
