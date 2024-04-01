@@ -50,7 +50,7 @@ const Footer = () => {
             <h2>{legal.title}</h2>
             <div className={styles.legalContent}>
               {legal.pages.map((item) => (
-                <Link href={`${item.link}`} key={item.id}>
+                <Link href={`${item.link}`} key={item.id} target="_blank">
                   {item.title}
                 </Link>
               ))}

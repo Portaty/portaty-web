@@ -254,7 +254,7 @@ export const footer = {
       {
         id: "pages-2",
         title: "Política de privacidad",
-        link: "/",
+        link: "/politicas",
       },
       {
         id: "pages-3",
