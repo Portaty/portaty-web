@@ -287,20 +287,29 @@ const Terms = () => {
         available to You on our Service. You agree that the original English
         text shall prevail in the case of a dispute.
       </p>
-      <h2>Changes to These Terms and Conditions</h2>
+      <h2>Account Deletion Requests</h2>
       <p>
-        We reserve the right, at Our sole discretion, to modify or replace these
-        Terms at any time. If a revision is material We will make reasonable
-        efforts to provide at least 30 days' notice prior to any new terms
-        taking effect. What constitutes a material change will be determined at
-        Our sole discretion.
+        If you wish to delete your registered account with us, you can do so by
+        sending a request to our email address. Please include the following
+        information in your request:
+      </p>
+      <ul>
+        <li>Your full name.</li>
+        <li>The email address associated with your account.</li>
+        <li>
+          A brief explanation of the reason for the deletion request (optional).
+        </li>
+      </ul>
+      <p>
+        Send your request to:{" "}
+        <a href="mailto:soporte@portaty.com">soporte@portaty.com</a>
       </p>
       <p>
-        By continuing to access or use Our Service after those revisions become
-        effective, You agree to be bound by the revised terms. If You do not
-        agree to the new terms, in whole or in part, please stop using the
-        website and the Service.
+        We will process your request and delete your account within 30 business
+        days. Please note that once deleted, we will not be able to recover your
+        account information.
       </p>
+
       <h2>Contact Us</h2>
       <p>
         If you have any questions about these Terms and Conditions, You can

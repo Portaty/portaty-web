@@ -494,6 +494,28 @@ const PrivacyPolicy = () => {
         Please note, however, that We may need to retain certain information
         when we have a legal obligation or lawful basis to do so.
       </p>
+      <h2>Account Deletion Requests</h2>
+      <p>
+        If you wish to delete your registered account with us, you can do so by
+        sending a request to our email address. Please include the following
+        information in your request:
+      </p>
+      <ul>
+        <li>Your full name.</li>
+        <li>The email address associated with your account.</li>
+        <li>
+          A brief explanation of the reason for the deletion request (optional).
+        </li>
+      </ul>
+      <p>
+        Send your request to:{" "}
+        <a href="mailto:soporte@portaty.com">soporte@portaty.com</a>
+      </p>
+      <p>
+        We will process your request and delete your account within 30 business
+        days. Please note that once deleted, we will not be able to recover your
+        account information.
+      </p>
       <h3>Disclosure of Your Personal Data</h3>
       <h4>Business Transactions</h4>
       <p>
